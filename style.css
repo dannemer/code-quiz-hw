@@ -1,16 +1,23 @@
 * {
     background-color: antiquewhite;
-    text-align: center;
 }
 
-main {
+header {
+    background-color: gray;
+    justify-content: space-between;
+}
+
+.score {
+    text-align: right;
 
 }
 
-
-
+.time {
+    text-align: left;
+}
 
 
 footer {
-
+    background-color: gray;
+    text-align: center;
 }
