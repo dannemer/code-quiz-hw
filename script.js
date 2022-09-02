@@ -1,38 +1,37 @@
-var timerEl = document.getElementById('timer');
-var timeLeft = 90;
-var 
+var timerEl = document.querySelector('.countdown');
 
+var counter = 0;
+timeEl.textContent = 0;
 
+function countdown() {
+    counter++;
+    timeEl.textContent = counter;
+};
+
+setInterval(timer, 1000);
 
 var questions = [
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: ["before the body closing tag", "within the header", "after the HTML closing tag", "No need" ]
-    answer: "before the closing body tag"},
+    {question: "What was the first movie to be rated PG13?",
+    choices: ["Red Dawn", "Indiana Jones and the Temple of Doom", "Gremlins", "Beverly Hills Cop"]
+    answer: "Red Dawn"},
 
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: []
-    answer:      },
+    {question: "What was the first feature-length animated movie ever released?",
+    choices: ["Fantasia", "Snow White and the Seven Dwarfs", "Dumbo", "Pinocchio"]
+    answer: "Snow White and the Seven Dwarfs"},
 
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: []
-    answer:      },
+    {question: "What is the first animated movie that was made entirely by CGI",
+    choices: ["Cassiopeia", "Antz", "A Bug's Life", "Toy Story"]
+    answer: "Toy Story"},
 
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: []
-    answer:      },
+    {question:"What is the highest grossing movie of all time?",
+    choices: ["Titanic", "Avatar", "Avengers", "Frozen"]
+    answer: "Avatar"},
 
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: []
-    answer:      },
-
-    {question: "Where should a script tag be linked in an HTML document?",
-    choices: []
-    answer:      },
+    {question: "How many Oscar categories are there?",
+    choices: ["20", "22", "24", "26"]
+    answer: "24"},
     
 ]
-
-
-
 
 function displaymessage() {
 
