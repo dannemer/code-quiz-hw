@@ -1,14 +1,26 @@
-var timerEl = document.querySelector('.countdown');
+var timerEl = document.getElementById("timer");
 
-var counter = 0;
-timeEl.textContent = 0;
+var mainEl = document.getElementById("main");
 
-function countdown() {
-    counter++;
-    timeEl.textContent = counter;
-};
+function timer() {
+    var = counter
+    var timerInterval = setInterval(function() {
+    counter--;
+    timerEl.textContent = counter + " seconds left";
 
-setInterval(timer, 1000);
+    if(counter === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+    }
+
+}, 1000);
+
+function displaymessage() {
+
+}
+
+
+function askQuestions() {
 
 var questions = [
     {question: "What was the first movie to be rated PG13?",
@@ -32,6 +44,8 @@ var questions = [
     answer: "24"},
     
 ]
+if(questions = true)
+}
 
 function displaymessage() {
 
