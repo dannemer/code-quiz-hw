@@ -19,6 +19,13 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.infoBox.activeInfo, .quizBox.activeQuiz, .resultBox.activeResult{
+    z-index: 5;
+    opacity: 0;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
 .startBtn button {
   font-size: 25px;
   font-weight: 500;
@@ -192,6 +199,20 @@ section .optionList .option:hover {
 .optionList .option:last-child {
   margin-bottom: 0px;
 }
+
+.optionList .option.correct{
+    color: black;
+    background: green;
+  }
+
+  .optionList .option.incorrect{
+    color: black;
+    background: red;
+  }
+
+  .optionList .option.disabled{
+    pointer-events: none;
+  }
 
 .quizBox footer {
   height: 60px;

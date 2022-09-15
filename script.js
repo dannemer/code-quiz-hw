@@ -29,6 +29,9 @@ let counter;
 let timeValue = 15
 
 const nextBtn = quizBox.document.querySelector(".nextBtn");
+const resultBox = document.querySelector(".resultBox");
+const restartQuiz = resultBox.querySelector(".buttons .restart");
+const quitQuiz = resultBox.querySelector(".buttons .quit");
 
 nextBtn.onclick = ()=>{
     if(queCount < questions.length - 1){
@@ -38,28 +41,26 @@ nextBtn.onclick = ()=>{
         queCounter(queNumb);
         clearInterval(counter);
         startTimer(timeValue);
-    else{
-
-    }
+        nextBtn.style.display = "none";
+    }else{
+        showResultBox();
     }
 }
 
 function showQuestions(index){
-const queText = document.querySelector(".queText");
-let queTag = '<span>' + questions[index].numb + ". " + questions[index].question +'</span>';
-let optionTag = '<div class="option">'+ questions[index].options[0] +'<span></span<>/div>'
+    const queText = document.querySelector(".queText");
+    let queTag = '<span>' + questions[index].numb + ". " + questions[index].question +'</span>';
+    let optionTag = '<div class="option">'+ questions[index].options[0] +'<span></span<>/div>'
                 + '<div class="option">'+ questions[index].options[1] +' <span></span<>/div>'
                 + '<div class="option">'+ questions[index].options[2] +'<span></span<>/div>'
                 + '<div class="option">'+ questions[index].options[3] +'<span></span<>/div>';
 queText.innerHTML = queTag;
-optionList.innerHTML = optionTag
-const option = optionList.querySelector(".option")
+optionList.innerHTML = optionTag;
+const option = optionList.querySelectorAll(".option")
 for (let i = 0; i < option.length; i++) {
     option[i].setAttribute("onclick", "optionSelected(this)");
 }
 }
-
-let tic
 
 
 function optionSelected(answer){
@@ -79,10 +80,17 @@ function optionSelected(answer){
         }
     }
 
-    for (let i = 0; i < Array.length; i++) {
+    for (let i = 0; i < allOptions; i++) {
         const element = array[index];
         optionList.children[i].classList.add("disabled");
     }
+    nextBtn.style.display = "block";
+}
+
+function showResultBox();{
+    infoBox.classList.remove("activeInfo");
+    quizBox.classList.remove("activeIQuiz");
+    resultBox.classList.add("activeInfo");
 }
 
 function startTimer(time){
